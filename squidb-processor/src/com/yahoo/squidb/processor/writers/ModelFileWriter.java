@@ -140,8 +140,10 @@ public abstract class ModelFileWriter<T extends ModelSpec<?>> {
                 .setName(modelSpec.getGeneratedClassName())
                 .setSuperclass(modelSpec.getModelSuperclass())
                 .setInterfaces(accumulateInterfacesFromPlugins())
-                .setKind(Type.CLASS)
-                .setModifiers(Modifier.PUBLIC);
+                .setKind(Type.CLASS);
+        if (!modelSpec.isPackagePrivate()) {
+            params.setModifiers(Modifier.PUBLIC);
+        }
         writer.beginTypeDefinition(params);
     }
 

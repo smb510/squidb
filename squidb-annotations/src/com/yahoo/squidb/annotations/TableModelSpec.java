@@ -37,4 +37,9 @@ public @interface TableModelSpec {
      */
     String virtualModule() default "";
 
+    /**
+     * Set to true to make the generated model package-private
+     */
+    boolean packagePrivate() default false;
+
 }

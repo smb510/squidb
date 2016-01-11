@@ -36,6 +36,11 @@ public class ViewModelSpecWrapper extends ModelSpec<ViewModelSpec> {
         return TypeConstants.VIEW_MODEL;
     }
 
+    @Override
+    public boolean isPackagePrivate() {
+        return modelSpecAnnotation.packagePrivate();
+    }
+
     /**
      * @return a {@link VariableElement} representing the query in the model spec that should define the view
      */

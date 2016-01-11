@@ -30,4 +30,9 @@ public @interface ViewModelSpec {
      */
     boolean isSubquery() default false;
 
+    /**
+     * Set to true to make the generated model package-private
+     */
+    boolean packagePrivate() default false;
+
 }

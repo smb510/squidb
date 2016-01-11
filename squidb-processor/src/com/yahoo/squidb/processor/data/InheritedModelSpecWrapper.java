@@ -34,6 +34,11 @@ public class InheritedModelSpecWrapper extends ModelSpec<InheritedModelSpec> {
     }
 
     @Override
+    public boolean isPackagePrivate() {
+        return modelSpecAnnotation.packagePrivate();
+    }
+
+    @Override
     protected void addModelSpecificImports(Set<DeclaredTypeName> imports) {
         imports.add(superclass);
     }

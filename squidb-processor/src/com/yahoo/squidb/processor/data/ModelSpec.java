@@ -96,6 +96,11 @@ public abstract class ModelSpec<T extends Annotation> {
     public abstract DeclaredTypeName getModelSuperclass();
 
     /**
+     * @return true if the generated model should be package-private
+     */
+    public abstract boolean isPackagePrivate();
+
+    /**
      * Adds imports required by this model spec to the given accumulator set
      *
      * @param imports accumulator set
@@ -179,9 +184,9 @@ public abstract class ModelSpec<T extends Annotation> {
     /**
      * Attach arbitrary metadata to this model spec objects. Plugins can store metadata and then retrieve it later with
      * {@link #getMetadata(String)}
+     *
      * @param metadataKey key for storing/retrieving the metadata
      * @param metadata the metadata to store
-     *
      * @see #hasMetadata(String)
      * @see #getMetadata(String)
      */
@@ -192,7 +197,6 @@ public abstract class ModelSpec<T extends Annotation> {
     /**
      * @param metadataKey the metadata key to look up
      * @return true if there is metadata stored for the given key, false otherwise
-     *
      * @see #putMetadata(String, Object)
      * @see #getMetadata(String)
      */
@@ -202,9 +206,9 @@ public abstract class ModelSpec<T extends Annotation> {
 
     /**
      * Retrieve metadata that was previously attached with {@link #putMetadata(String, Object)}
+     *
      * @param metadataKey key for storing/retrieving metadata
      * @return the metadata object for the given key if one was found, null otherwise
-     *
      * @see #putMetadata(String, Object)
      * @see #hasMetadata(String)
      */

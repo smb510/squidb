@@ -50,6 +50,11 @@ public class TableModelSpecWrapper extends ModelSpec<TableModelSpec> {
     }
 
     @Override
+    public boolean isPackagePrivate() {
+        return modelSpecAnnotation.packagePrivate();
+    }
+
+    @Override
     protected void addModelSpecificImports(Set<DeclaredTypeName> imports) {
         imports.add(TypeConstants.LONG_PROPERTY);
         imports.add(TypeConstants.TABLE_MODEL);

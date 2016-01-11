@@ -51,4 +51,9 @@ public @interface InheritedModelSpec {
      */
     String inheritsFrom();
 
+    /**
+     * Set to true to make the generated model package-private
+     */
+    boolean packagePrivate() default false;
+
 }
